@@ -1,0 +1,39 @@
+
+Even or Odd
+
+SELECT number,
+CASE WHEN (number % 2) = 0 THEN 'Even'
+ELSE 'Odd' END AS is_even
+FROM numbers;
+
+
+Multiply
+SELECT price * amount AS total
+FROM items
+
+
+
+Reversed Strings
+-- # write your SQL statement here: you are given a table 'solution' with column 'str', return a table with column 'str' and your result in a column named 'res'.
+select str, reverse(str) as res
+from solution
+
+
+Convert boolean values to strings 'Yes' or 'No'.
+-- # write your SQL statement here: you are given a table 'booltoword' with column 'bool', return a table with column 'bool' and your result in a column named 'res'.
+SELECT bool,
+       CASE
+           WHEN bool THEN 'Yes'
+           ELSE           'No'
+       END AS res
+FROM booltoword
+
+
+Opposite number
+Select -number AS res FROM opposite;
+
+
+Remove First and Last Character
+-- # write your SQL statement here: you are given a table 'removechar' with column 's', return a table with column 's' and your result in a column named 'res'.
+SELECT s, SUBSTRING(s, 2, LENGTH(s) - 2) AS res
+FROM removechar
