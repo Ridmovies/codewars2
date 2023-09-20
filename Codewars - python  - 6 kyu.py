@@ -1739,5 +1739,75 @@ import codewars_test as test
 # # test.assert_equals(calc("4 2 /"), 2, "Should support division")
 # test.assert_equals(calc("5 1 2 + 4 * + 3 -"), 14, "Should support division")
 
+#
+# def kebabize(st):
+#     # res = []
+#     # if st[0].isalpha():
+#     #     res.append(st[0].lower())
+#     # for i in st[1::]:
+#     #     if i.isupper():
+#     #         if res:
+#     #             res.append(f'-{i.lower()}')
+#     #         else:
+#     #             res.append(i.lower())
+#     #     elif i.isalpha():
+#     #         res.append(i)
+#     # return ''.join(res)
+#     # return ''.join(c if c.islower() else '-' + c.lower() for c in st if c.isalpha()).strip('-')
+#
+#     return ''.join([i if i.islower() else '-'+i.lower() for i in st if i.isalpha()]).strip('-')
+#
+#
+# test.assert_equals(kebabize('6IpMOsat3p6gxf81hgAmd'), 'ip-m-osatpgxfhg-amd')
+# test.assert_equals(kebabize('myCamelCasedString'), 'my-camel-cased-string')
+# test.assert_equals(kebabize('myCamelHas3Humps'), 'my-camel-has-humps')
+# test.assert_equals(kebabize('SOS'), 's-o-s')
+# test.assert_equals(kebabize('42'), '')
+# test.assert_equals(kebabize('CodeWars'), 'code-wars')
 
-#########111111111111111111111111111
+
+# def abbreviate(s):
+#     res = []
+#     tmp = []
+#     for n, i in enumerate(s):
+#         if i.isalpha():
+#             tmp.append(i)
+#         else:
+#             if len(tmp) >= 4:
+#                 res.append(tmp[0]+str(len(tmp)-2) + tmp[-1])
+#             else:
+#                 res.append(''.join(tmp))
+#             res.append(i)
+#             tmp = []
+#
+#     if tmp:
+#         if len(tmp) >= 4:
+#             res.append(tmp[0] + str(len(tmp) - 2) + tmp[-1])
+#         else:
+#             res.append(''.join(tmp))
+#
+#     return ''.join(res)
+#
+#
+# test.assert_equals(abbreviate("doggy; is, the_"), "d3y; is, the_")
+# test.assert_equals(abbreviate("internationalization"), "i18n")
+# test.assert_equals(abbreviate("accessibility"), "a11y")
+# test.assert_equals(abbreviate("Accessibility"), "A11y")
+# test.assert_equals(abbreviate("elephant-ride"), "e6t-r2e")
+
+
+# def presses(phrase):
+#     res = []
+#     lst = ['1', '*', '#', 'ABC2', 'DEF3', 'GHI4', 'JKL5', 'MNO6', 'PQRS7', 'TUV8', 'WXYZ9', ' 0']
+#
+#     for letter in phrase:
+#         for part in lst:
+#             if letter.upper() in part:
+#                 res.append(part.index(letter.upper())+1)
+#     return sum(res)
+#
+# test.assert_equals(presses("WHERE DO U WANT 2 MEET L8R"), 47)
+# test.assert_equals(presses("0123456789"), 37)
+# test.assert_equals(presses("abcdefghijklmnopqrstuvwxyz"), 56)
+# test.assert_equals(presses("LOL"), 9)
+# test.assert_equals(presses("HOW R U"), 13)
