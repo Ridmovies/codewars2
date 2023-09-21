@@ -1811,3 +1811,73 @@ import codewars_test as test
 # test.assert_equals(presses("abcdefghijklmnopqrstuvwxyz"), 56)
 # test.assert_equals(presses("LOL"), 9)
 # test.assert_equals(presses("HOW R U"), 13)
+
+
+
+# def to_nato(words):
+#     NATO = {
+#         'A': 'Alfa',  'B': 'Bravo',   'C': 'Charlie',
+#         'D': 'Delta',  'E': 'Echo',    'F': 'Foxtrot',
+#         'G': 'Golf',   'H': 'Hotel',   'I': 'India',
+#         'J': 'Juliett','K': 'Kilo',    'L': 'Lima',
+#         'M': 'Mike',   'N': 'November','O': 'Oscar',
+#         'P': 'Papa',   'Q': 'Quebec',  'R': 'Romeo',
+#         'S': 'Sierra', 'T': 'Tango',   'U': 'Uniform',
+#         'V': 'Victor', 'W': 'Whiskey', 'X': 'Xray',
+#         'Y': 'Yankee', 'Z': 'Zulu'}
+
+#     return ' '.join(NATO.get(char, char) for char in words.upper() if char != ' ')
+#
+#     # res = []
+#     # for i in words:
+#     #
+#     #     if i.upper() in d:
+#     #         res.append(d[i.upper()])
+#     #     elif i == ' ':
+#     #         pass
+#     #     else:
+#     #         res.append(i)
+#     # return ' '.join(res)
+#
+#
+#
+# test.assert_equals(to_nato('ljlm[-&C'),
+#                    "Lima Juliett Lima Mike [ - & Charlie")
+# test.assert_equals(to_nato('Did not see that coming'),
+#                    "Delta India Delta November Oscar Tango Sierra Echo Echo Tango Hotel Alfa Tango Charlie Oscar Mike India November Golf")
+# test.assert_equals(to_nato('.d?d!'), '. Delta ? Delta !')
+
+
+
+# def decipher_this(s):
+#     res = []
+#     dig = []
+#     w = []
+#
+#     for word in s.split():
+#         for i in word:
+#             if i.isdigit():
+#                 dig.append(i)
+#             else:
+#                 w.append(i)
+#         if len(w) > 1:
+#             res.append(chr(int(''.join(dig)))+w[-1]+''.join(w[1:-1])+w[0])
+#         elif len(w) == 1:
+#             res.append(chr(int(''.join(dig))) + w[0])
+#         else:
+#             res.append(chr(int(''.join(dig))))
+#         dig = []
+#         w = []
+#
+#     return ' '.join(res)
+#
+#
+# # test.assert_equals(decipher_this("65"), 'A')
+# test.assert_equals(decipher_this("65 119esi 111dl 111lw 108dvei 105n 97n 111ka"), "A wise old owl lived in an oak")
+# test.assert_equals(decipher_this("84eh 109ero 104e 115wa 116eh 108sse 104e 115eokp"),
+#                    "The more he saw the less he spoke")
+# test.assert_equals(decipher_this("84eh 108sse 104e 115eokp 116eh 109ero 104e 104dare"),
+#                    "The less he spoke the more he heard")
+# test.assert_equals(decipher_this("87yh 99na 119e 110to 97ll 98e 108eki 116tah 119esi 111dl 98dri"),
+#                    "Why can we not all be like that wise old bird")
+# test.assert_equals(decipher_this("84kanh 121uo 80roti 102ro 97ll 121ruo 104ple"), "Thank you Piotr for all your help")
