@@ -1881,3 +1881,40 @@ import codewars_test as test
 # test.assert_equals(decipher_this("87yh 99na 119e 110to 97ll 98e 108eki 116tah 119esi 111dl 98dri"),
 #                    "Why can we not all be like that wise old bird")
 # test.assert_equals(decipher_this("84kanh 121uo 80roti 102ro 97ll 121ruo 104ple"), "Thank you Piotr for all your help")
+
+
+# def longest_repetition(chars):
+#     count, char = 0, ''
+#     max_count, max_char = 0, ''
+#     for i in chars:
+#         if i != char:
+#             count, char = 0, i
+#         count += 1
+#         if count > max_count:
+#             max_count = count
+#             max_char = char
+#     return max_char, max_count
+
+
+# def get_length_of_missing_array(array_of_arrays):
+#
+#     arrays = [len(i) if i else 0 for i in array_of_arrays]
+#     arrays.sort()
+#     if 0 in arrays or len(arrays) == 0: return 0
+#     for i in range(len(arrays)):
+#         if arrays[i+1] != arrays[i] + 1: return arrays[i]+1
+
+    # for i in array_of_arrays:
+    #     if type(i) != list:
+    #         return 0
+    # if array_of_arrays:
+    #     array_of_arrays = sorted(array_of_arrays, key=len)
+    # else:
+    #     return 0
+    # num = len(array_of_arrays[0])
+    # for i in array_of_arrays:
+    #     if not i:
+    #         return 0
+    #     if len(i) != num:
+    #         return num
+    #     num += 1
