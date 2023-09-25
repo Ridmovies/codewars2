@@ -1904,17 +1904,36 @@ import codewars_test as test
 #     for i in range(len(arrays)):
 #         if arrays[i+1] != arrays[i] + 1: return arrays[i]+1
 
-    # for i in array_of_arrays:
-    #     if type(i) != list:
-    #         return 0
-    # if array_of_arrays:
-    #     array_of_arrays = sorted(array_of_arrays, key=len)
-    # else:
-    #     return 0
-    # num = len(array_of_arrays[0])
-    # for i in array_of_arrays:
-    #     if not i:
-    #         return 0
-    #     if len(i) != num:
-    #         return num
-    #     num += 1
+
+# def longest_palindrome(s):
+#     longest = 0
+#     cnt = 0
+#
+#     for j in range(1, len(s) + 1):
+#         for i in range(j):
+#             t = s[i:j]
+#             cnt += 1
+#
+#             print(t, t[::-1])
+#             if t == t[::-1]:
+#                 longest = max(longest, len(t))
+#
+#     return longest, cnt
+#
+#
+# print(longest_palindrome('zzbaabcd'))
+
+
+# def permute_a_palindrome(input):
+#     d = {}
+#     cnt = 0
+#     for i in input:
+#         if i not in d:
+#             d[i] = 0
+#         d[i] += 1
+#
+#     for i in d.values():
+#         if i % 2:
+#             cnt += 1
+#     return True if cnt <= 1 else False
+
