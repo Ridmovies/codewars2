@@ -1937,3 +1937,81 @@ import codewars_test as test
 #             cnt += 1
 #     return True if cnt <= 1 else False
 
+
+
+# def get_order(order):
+#     menu = [(1, 'Burger'), (2, 'Fries'), (3, 'Chicken'),(4, 'Pizza'),(5, 'Sandwich'),(6, 'Onionrings'),(7, 'Milkshake'),(8, 'Coke')]
+#     menu_lst = [i[1] for i in menu]
+#
+#     res = []
+#
+#     for i in menu_lst:
+#         if i.lower() in order:
+#             cnt = order.count(i.lower())
+#             res.append(f'{i} ' * cnt)
+#
+#     return ''.join(res)[:-1:]
+#
+#
+# test.assert_equals(get_order("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"),
+#                     "Burger Fries Chicken Pizza Pizza Pizza Sandwich Milkshake Milkshake Coke")
+# test.assert_equals(get_order("pizzachickenfriesburgercokemilkshakefriessandwich"),
+#                     "Burger Fries Fries Chicken Pizza Sandwich Milkshake Coke")
+
+
+# def dup(arry):
+#     res = []
+#     tmp = ''
+#     for word in arry:
+#         for i in word:
+#             if not tmp:
+#                 tmp += i
+#             else:
+#                 if i != tmp[-1]:
+#                     tmp += i
+#         res.append(tmp)
+#         tmp = ''
+#     return res
+#
+#
+# test.assert_equals(dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]),['codewars','picaniny','hubububo'])
+# test.assert_equals(dup(["abracadabra","allottee","assessee"]),['abracadabra','alote','asese'])
+# test.assert_equals(dup(["kelless","keenness"]), ['keles','kenes'])
+# test.assert_equals(dup(["Woolloomooloo","flooddoorroommoonlighters","chuchchi"]), ['Wolomolo','flodoromonlighters','chuchchi'])
+# test.assert_equals(dup(["adanac","soonness","toolless","ppellee"]), ['adanac','sones','toles','pele'])
+# test.assert_equals(dup(["callalloo","feelless","heelless"]), ['calalo','feles','heles'])
+# test.assert_equals(dup(["putteellinen","keenness"]), ['putelinen','kenes'])
+# test.assert_equals(dup(["kelless","voorraaddoosspullen","achcha"]), ['keles','voradospulen','achcha'])
+
+
+# def string_transformer(s):
+#     # return ' ' .join(s.split(' ')[::-1]).swapcase()
+#
+#     tmp = s.split(' ')[::-1]
+#     res = []
+#     t = []
+#
+#     if not s:
+#         return ''
+#
+#     for word in tmp:
+#         for i in word:
+#             if i.islower():
+#                 t.append(i.upper())
+#             else:
+#                 t.append(i.lower())
+#         res.append(''.join(t))
+#         t = []
+#
+#     return ' '.join(res)
+
+
+# test.assert_equals(string_transformer("Example string"), "STRING eXAMPLE")
+# test.assert_equals(string_transformer("Example Input"), "iNPUT eXAMPLE")
+# test.assert_equals(string_transformer("To be OR not to be That is the Question"), "qUESTION THE IS tHAT BE TO NOT or BE tO")
+# # Should handle empty string
+# test.assert_equals(string_transformer(""), "")
+# # Should handle multiple spaces
+# test.assert_equals(string_transformer("You Know When  THAT  Hotline Bling"), "bLING hOTLINE  that  wHEN kNOW yOU")
+# # Should handle leading space
+# test.assert_equals(string_transformer(" A b C d E f G "), " g F e D c B a ")
