@@ -1050,24 +1050,24 @@ import codewars_test as test
 # def solution(n):
 #
 #     dic = {1: 'I', 4: 'IV', 5: 'V', 6: 'VI', 10: 'X', 50: 'L', 100: 'C', 500: 'D', 1000: 'M'}
-#
-#     lst = []
-#     string_n = str(n)[::-1]
-#     for x in range(len(string_n)):
-#         foundation = int(string_n[x])
-#         rest = 10 ** x
-#         figure = int(foundation * rest)
-#         if figure in dic:
-#             lst.append(dic[figure])
-#         elif foundation in [2, 3]:
-#             lst.append(dic[rest]*foundation)
-#         elif foundation in [4]:
-#             lst.append(dic[rest]+dic[rest*5])
-#         elif foundation in [6, 7, 8]:
-#             lst.append(dic[rest*5]+dic[rest]*(foundation-5))
-#         elif foundation in [9]:
-#             lst.append(dic[rest] + dic[rest*10])
-#     return ''.join(lst[::-1])
+
+    # lst = []
+    # string_n = str(n)[::-1]
+    # for x in range(len(string_n)):
+    #     foundation = int(string_n[x])
+    #     rest = 10 ** x
+    #     figure = int(foundation * rest)
+    #     if figure in dic:
+    #         lst.append(dic[figure])
+    #     elif foundation in [2, 3]:
+    #         lst.append(dic[rest]*foundation)
+    #     elif foundation in [4]:
+    #         lst.append(dic[rest]+dic[rest*5])
+    #     elif foundation in [6, 7, 8]:
+    #         lst.append(dic[rest*5]+dic[rest]*(foundation-5))
+    #     elif foundation in [9]:
+    #         lst.append(dic[rest] + dic[rest*10])
+    # return ''.join(lst[::-1])
 
 
 # test.assert_equals(solution(1), 'I', "solution(1),'I'")
@@ -2015,3 +2015,81 @@ import codewars_test as test
 # test.assert_equals(string_transformer("You Know When  THAT  Hotline Bling"), "bLING hOTLINE  that  wHEN kNOW yOU")
 # # Should handle leading space
 # test.assert_equals(string_transformer(" A b C d E f G "), " g F e D c B a ")
+
+# def rome(num):
+#     roman_dict = {'I': 1, 'V': 5, 'X': 10}
+#     arabic_num = 0
+#     for i in range(len(num)):
+#         if i > 0 and roman_dict[num[i]] > roman_dict[num[i-1]]:
+#             arabic_num += roman_dict[num[i]] - 2 * roman_dict[num[i-1]]
+#         else:
+#             arabic_num += roman_dict[num[i]]
+#     return arabic_num
+
+
+# test.assert_equals(rome("I"), 1)
+# test.assert_equals(rome("II"), 2)
+# test.assert_equals(rome("IV"), 4)
+# test.assert_equals(rome("V"), 5)
+# test.assert_equals(rome("VI"), 6)
+# test.assert_equals(rome("VIII"), 8)
+# test.assert_equals(rome("IX"), 9)
+# test.assert_equals(rome("X"), 10)
+# test.assert_equals(rome("XI"), 11)
+# test.assert_equals(rome("XII"), 12)
+# test.assert_equals(rome("XIII"), 13)
+# test.assert_equals(rome("XIV"), 14)
+# test.assert_equals(rome("XV"), 15)
+# test.assert_equals(rome("XVI"), 16)
+# test.assert_equals(rome("XVIII"), 18)
+# test.assert_equals(rome("XX"), 20)
+# test.assert_equals(rome("XXI"), 21)
+# test.assert_equals(rome("XXII"), 22)
+# test.assert_equals(rome("XXIII"), 23)
+# test.assert_equals(rome("XXIV"), 24)
+# test.assert_equals(rome("XXV"), 25)
+# test.assert_equals(rome("XXVI"), 26)
+# test.assert_equals(rome("XXVIII"), 28)
+
+
+# def bingo(ticket,win):
+#     cnt = 0
+#     for i in ticket:
+#         for j in i[0]:
+#             if ord(j) == i[1]:
+#                 cnt += 1
+#                 break
+#     return 'Loser!' if cnt < win else 'Winner!'
+#
+#
+# test.assert_equals(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2), 'Loser!')
+# test.assert_equals(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1), 'Winner!')
+# test.assert_equals(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3), 'Loser!')
+
+
+# def count_deaf_rats(town):
+#     rat_dict = {'~O': 0, 'O~': 0}
+#     for n, s in enumerate(town.replace(' ', '').split('P')):
+#         lst = [s[i:i + 2] for i in range(0, len(s), 2)]
+#         if n % 2 == 0:
+#             rat_dict['~O'] += lst.count('~O')
+#             rat_dict['O~'] += lst.count('O~')
+#         else:
+#             rat_dict['~O'] += lst.count('~O')
+#             rat_dict['O~'] += lst.count('~O')
+#     return rat_dict['O~']
+
+
+# @test.it("ex1")
+# def ex1():
+#     test.assert_equals(count_deaf_rats("~O~O~O~O P"), 0)
+#
+#
+# @test.it("ex2")
+# def ex2():
+#     test.assert_equals(count_deaf_rats("P O~ O~ ~O O~"), 1)
+
+
+# @test.it("ex3")
+# def ex3():
+#     test.assert_equals(count_deaf_rats("O~~OO~~OO~~OO~P~OO~~OO~~OO~~O"), 8)
