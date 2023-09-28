@@ -2093,3 +2093,93 @@ import codewars_test as test
 # @test.it("ex3")
 # def ex3():
 #     test.assert_equals(count_deaf_rats("O~~OO~~OO~~OO~P~OO~~OO~~OO~~O"), 8)
+
+
+
+# def pascals_triangle(n):
+#     trinagle = []
+#
+#     for i in range(1, n+1):
+#         if i >= 3:
+#             tmp = []
+#             tmp.append(1)
+#             for j in range(len(trinagle[-1])-1):
+#                 tmp.append(trinagle[-1][j] + trinagle[-1][j+1])
+#             tmp.append(1)
+#             trinagle.append(tmp)
+#         else:
+#             trinagle.append([1]*i)
+#         print(trinagle)
+#
+#     return [num for sublist in trinagle for num in sublist]
+
+
+
+# test.assert_equals(pascals_triangle(1), [1],"1 level triangle incorrect")
+# test.assert_equals(pascals_triangle(2), [1,1,1],"2 level triangle incorrect")
+# test.assert_equals(pascals_triangle(3), [1,1,1,1,2,1],"3 level triangle incorrect")
+# test.assert_equals(pascals_triangle(4), [1, 1, 1, 1, 2, 1, 1, 3, 3, 1],"4 level triangle incorrect")
+
+
+# def number_of_pairs(gloves):
+#     gloves_dict = {}
+#     for glove in gloves:
+#         if glove not in gloves_dict:
+#             gloves_dict[glove] = 0
+#         gloves_dict[glove] += 1
+#
+#     return sum([i // 2for i in gloves_dict.values()])
+#
+#
+# test.assert_equals(number_of_pairs(["red", "red"]), 1)
+# test.assert_equals(number_of_pairs(["red", "green", "blue"]), 0)
+# test.assert_equals(number_of_pairs(["gray", "black", "purple", "purple", "gray", "black"]), 3)
+# test.assert_equals(number_of_pairs([]), 0)
+# test.assert_equals(number_of_pairs(["red", "green", "blue", "blue", "red", "green", "red", "red", "red"]), 4)
+
+
+# def sum_consecutives(s):
+#     prev = None
+#     x = []
+#     for i in s:
+#         if i == prev:
+#             x[-1] += i
+#         else:
+#             x.append(i)
+#         prev = i
+#     return x
+#
+# test.assert_equals(sum_consecutives([1,4,4,4,0,4,3,3,1]),[1,12,0,4,6,1], "on list [1,4,4,0,4,3,3,1] you get ")
+# test.assert_equals(sum_consecutives([1,1,7,7,3]),[2,14,3], "on list [1,1,7,7,3] you get ")
+# test.assert_equals(sum_consecutives([-5,-5,7,7,12,0]),[-10,14,12,0], "on list [-5,-5,7,7,12,0] you get ")
+# test.assert_equals(sum_consecutives([3,3,3,3,1]),[12, 1], "on list [3,3,3,3,1] you get " )
+# test.assert_equals(sum_consecutives([0, 1, 1, 2, 2]),[0, 2, 4], "on list [0, 1, 1, 2, 2] you get " )
+
+
+# def group_by_commas(n):
+    # n = str(n)[::-1]
+    # res = []
+    # cnt = 0
+    # for i in n:
+    #     res.append(i)
+    #     cnt += 1
+    #     if cnt == 3:
+    #         res.append(',')
+    #         cnt = 0
+    #
+    # if res[-1] == ',':
+    #     res.pop()
+    # return ''.join(res)[::-1]
+
+    # return '{:,}'.format(n)
+    # return f'{n:,}'
+
+#
+# test.assert_equals(group_by_commas(1), '1')
+# test.assert_equals(group_by_commas(10), '10')
+# test.assert_equals(group_by_commas(100), '100')
+# test.assert_equals(group_by_commas(1000), '1,000')
+# test.assert_equals(group_by_commas(10000), '10,000')
+# test.assert_equals(group_by_commas(100000), '100,000')
+# test.assert_equals(group_by_commas(1000000), '1,000,000')
+# test.assert_equals(group_by_commas(35235235), '35,235,235')
