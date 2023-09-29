@@ -2183,3 +2183,121 @@ import codewars_test as test
 # test.assert_equals(group_by_commas(100000), '100,000')
 # test.assert_equals(group_by_commas(1000000), '1,000,000')
 # test.assert_equals(group_by_commas(35235235), '35,235,235')
+
+
+# def find_children(dancing_brigade):
+#     d = {}
+#     for i in dancing_brigade:
+#         i = i.lower()
+#         if i not in d:
+#             d[i] = 0
+#         d[i] += 1
+#
+#     res = []
+#     for i in d:
+#         res.append((i * d[i]).capitalize())
+#     return ''.join(sorted(res))
+
+#
+#     return ''.join( sorted(sorted(s), key=str.lower) )
+#
+# test.assert_equals(find_children("abBA"), "AaBb")
+# test.assert_equals(find_children("AaaaaZazzz"), "AaaaaaZzzz")
+# test.assert_equals(find_children("CbcBcbaA"), "AaBbbCcc")
+# test.assert_equals(find_children("xXfuUuuF"), "FfUuuuXx")
+# test.assert_equals(find_children(""), "")
+
+
+# def sort_the_inner_content(words):
+#     res = []
+#
+#     for word in words.split():
+#         if len(word) > 2:
+#             res.append(word[0] + ''.join(sorted(list(word)[1:-1])[::-1]) + word[-1])
+#         else:
+#             res.append(word)
+#
+#     return ' '.join(res)
+#
+#
+#
+# test.assert_equals(sort_the_inner_content("sort the inner content in descending order"),
+#                    "srot the inner ctonnet in dsnnieedcg oredr")
+# test.assert_equals(sort_the_inner_content("s so som somk somkt somktr somktrx somktrxv somktrxvl somktrxvlo k kh khk khkn khknb khknbx khknbxm khknbxmj p pu puc pucb pucbl pucblj pucblju pucbljuo pucbljuoc i ib ibf o ox oxv oxvx oxvxr oxvxrl b bw"), 's so som somk somkt stomkr stromkx sxtromkv sxvtromkl sxvtromlko k kh khk kkhn knkhb knkhbx kxnkhbm kxnmkhbj p pu puc pucb pucbl pulcbj puljcbu puuljcbo puuoljcbc i ib ibf o ox oxv oxvx oxxvr oxxvrl b bw')
+# test.assert_equals(sort_the_inner_content("this kata is easy"), "tihs ktaa is esay")
+
+
+
+# def shifted_diff(first, second):
+#     # if len(first) != len(second) or len(first) == 0 or len(second)==0:
+#     #     return -1
+#     # cnt = 0
+#     # second = list(second)
+#     # first = list(first)
+#     #
+#     # for i in range(len(first)):
+#     #     if second == first:
+#     #         return i
+#     #
+#     #     first.insert(0, first.pop())
+#     #
+#     # return -1
+#
+#     # return (second + second).find(first) if len(first) == len(second) else - 1
+#
+#
+#
+#
+# test.assert_equals(shifted_diff("eecoff","coffee"), 4)
+# test.assert_equals(shifted_diff("Moose","moose"), -1)
+# test.assert_equals(shifted_diff("isn't","'tisn"), 2)
+# test.assert_equals(shifted_diff("Esham","Esham"), 0)
+# test.assert_equals(shifted_diff(" "," "), 0)
+# test.assert_equals(shifted_diff("hoop","pooh"), -1)
+# test.assert_equals(shifted_diff("  "," "), -1)
+
+
+### Salesman's Travel
+
+def travel(r, zipcode):
+    # your code
+    for i in ad.split(','):
+        print(i[-5:])
+        if zipcode[-5:] == i[-5:]:
+            print('111111')
+
+
+
+
+ad = ("123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432,"
+  "54 Holy Grail Street Niagara Town ZP 32908,3200 Main Rd. Bern AE 56210,1 Gordon St. Atlanta RE 13000,"
+  "10 Pussy Cat Rd. Chicago EX 34342,10 Gordon St. Atlanta RE 13000,58 Gordon Road Atlanta RE 13000,"
+  "22 Tokyo Av. Tedmondville SW 43098,674 Paris bd. Abbeville AA 45521,10 Surta Alley Goodtown GG 30654,"
+  "45 Holy Grail Al. Niagara Town ZP 32908,320 Main Al. Bern AE 56210,14 Gordon Park Atlanta RE 13000,"
+  "100 Pussy Cat Rd. Chicago EX 34342,2 Gordon St. Atlanta RE 13000,5 Gordon Road Atlanta RE 13000,"
+  "2200 Tokyo Av. Tedmondville SW 43098,67 Paris St. Abbeville AA 45521,11 Surta Avenue Goodtown GG 30654,"
+  "45 Holy Grail Al. Niagara Town ZP 32918,320 Main Al. Bern AE 56215,14 Gordon Park Atlanta RE 13200,"
+  "100 Pussy Cat Rd. Chicago EX 34345,2 Gordon St. Atlanta RE 13222,5 Gordon Road Atlanta RE 13001,"
+  "2200 Tokyo Av. Tedmondville SW 43198,67 Paris St. Abbeville AA 45522,11 Surta Avenue Goodville GG 30655,"
+  "2222 Tokyo Av. Tedmondville SW 43198,670 Paris St. Abbeville AA 45522,114 Surta Avenue Goodville GG 30655,"
+  "2 Holy Grail Street Niagara Town ZP 32908,3 Main Rd. Bern AE 56210,77 Gordon St. Atlanta RE 13000")
+
+
+code = ("OH 43071,NY 56432,ZP 32908,AE 56210,RE 13000,EX 34342,SW 43098,AA 45521,GG 30654,ZP 32908,AE 56215,RE 13200,EX 34345,"
+     "RE 13222,RE 13001,SW 43198,AA 45522,GG 30655,XX 32321,YY 45098")
+
+
+def testing(actual, expected):
+    test.assert_equals(actual, expected)
+
+@test.describe("travel")
+def _():
+    @test.it("Basic tests")
+    def _():
+        testing(travel(ad, "AA 45522"), "AA 45522:Paris St. Abbeville,Paris St. Abbeville/67,670")
+        testing(travel(ad, "EX 34342"), "EX 34342:Pussy Cat Rd. Chicago,Pussy Cat Rd. Chicago/10,100")
+        testing(travel(ad, "EX 34345"), "EX 34345:Pussy Cat Rd. Chicago/100")
+        testing(travel(ad, "AA 45521"), "AA 45521:Paris bd. Abbeville,Paris St. Abbeville/674,67")
+        testing(travel(ad, "AE 56215"), "AE 56215:Main Al. Bern/320")
+
+        testing(travel(ad, ""), ":/")
