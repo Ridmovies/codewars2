@@ -2257,47 +2257,45 @@ import codewars_test as test
 # test.assert_equals(shifted_diff("  "," "), -1)
 
 
-### Salesman's Travel
 
-def travel(r, zipcode):
-    # your code
-    for i in ad.split(','):
-        print(i[-5:])
-        if zipcode[-5:] == i[-5:]:
-            print('111111')
-
-
-
-
-ad = ("123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432,"
-  "54 Holy Grail Street Niagara Town ZP 32908,3200 Main Rd. Bern AE 56210,1 Gordon St. Atlanta RE 13000,"
-  "10 Pussy Cat Rd. Chicago EX 34342,10 Gordon St. Atlanta RE 13000,58 Gordon Road Atlanta RE 13000,"
-  "22 Tokyo Av. Tedmondville SW 43098,674 Paris bd. Abbeville AA 45521,10 Surta Alley Goodtown GG 30654,"
-  "45 Holy Grail Al. Niagara Town ZP 32908,320 Main Al. Bern AE 56210,14 Gordon Park Atlanta RE 13000,"
-  "100 Pussy Cat Rd. Chicago EX 34342,2 Gordon St. Atlanta RE 13000,5 Gordon Road Atlanta RE 13000,"
-  "2200 Tokyo Av. Tedmondville SW 43098,67 Paris St. Abbeville AA 45521,11 Surta Avenue Goodtown GG 30654,"
-  "45 Holy Grail Al. Niagara Town ZP 32918,320 Main Al. Bern AE 56215,14 Gordon Park Atlanta RE 13200,"
-  "100 Pussy Cat Rd. Chicago EX 34345,2 Gordon St. Atlanta RE 13222,5 Gordon Road Atlanta RE 13001,"
-  "2200 Tokyo Av. Tedmondville SW 43198,67 Paris St. Abbeville AA 45522,11 Surta Avenue Goodville GG 30655,"
-  "2222 Tokyo Av. Tedmondville SW 43198,670 Paris St. Abbeville AA 45522,114 Surta Avenue Goodville GG 30655,"
-  "2 Holy Grail Street Niagara Town ZP 32908,3 Main Rd. Bern AE 56210,77 Gordon St. Atlanta RE 13000")
+# # Backwards Read Primes
+# def backwards_prime(start, stop):
+#     res = []
+#     for num in range(start, stop+1):
+#         if is_prime(num) and is_prime(int(str(num)[::-1])) and num != int(str(num)[::-1]):
+#             res.append(num)
+#     return res
+#
+#
+# def is_prime(num):
+#     if num < 10:
+#         return False
+#     for div in range(2, int(num**0.5)+1):
+#         if num % div == 0:
+#             return False
+#     return True
 
 
-code = ("OH 43071,NY 56432,ZP 32908,AE 56210,RE 13000,EX 34342,SW 43098,AA 45521,GG 30654,ZP 32908,AE 56215,RE 13200,EX 34345,"
-     "RE 13222,RE 13001,SW 43198,AA 45522,GG 30655,XX 32321,YY 45098")
-
-
-def testing(actual, expected):
-    test.assert_equals(actual, expected)
-
-@test.describe("travel")
-def _():
-    @test.it("Basic tests")
-    def _():
-        testing(travel(ad, "AA 45522"), "AA 45522:Paris St. Abbeville,Paris St. Abbeville/67,670")
-        testing(travel(ad, "EX 34342"), "EX 34342:Pussy Cat Rd. Chicago,Pussy Cat Rd. Chicago/10,100")
-        testing(travel(ad, "EX 34345"), "EX 34345:Pussy Cat Rd. Chicago/100")
-        testing(travel(ad, "AA 45521"), "AA 45521:Paris bd. Abbeville,Paris St. Abbeville/674,67")
-        testing(travel(ad, "AE 56215"), "AE 56215:Main Al. Bern/320")
-
-        testing(travel(ad, ""), ":/")
+# def stat(strg):
+#     res = []
+#     for time in strg.split(', '):
+#         sec = [int(i) for i in time.split('|')]
+#         sec = sum([sec[0]*3600, sec[1]*60, sec[2]])
+#         res.append(sec)
+#
+#     return f'Range: {sec_to_str(max(res)-min(res))} Average: {sec_to_str(sum(res) // len(res))} ' \
+#            f'Median: {sec_to_str(sorted(res)[len(res)//2]) if len(res) % 2 else sec_to_str((sorted(res)[len(res)//2] + sorted(res)[len(res)//2-1])//2)}'
+#
+#
+# def sec_to_str(sec):
+#     return f'{str(sec // 3600).rjust(2, "0")}|{str((sec % 3600) // 60).rjust(2, "0")}|{str(sec % 60).rjust(2, "0")}'
+# #
+# print(sec_to_str(1679 ))
+#
+# # test.assert_equals(stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17"),
+# #     "Range: 01|01|18 Average: 01|38|05 Median: 01|32|34")
+# # test.assert_equals(stat("02|15|59, 2|47|16, 02|17|20, 2|32|34, 2|17|17, 2|22|00, 2|31|41"),
+# #     "Range: 00|31|17 Average: 02|26|18 Median: 02|22|00")
+#
+# test.assert_equals(stat("02|15|59, 2|47|16, 02|17|20, 2|32|34, 2|32|34, 2|17|17"),
+#     "Range: 00|31|17 Average: 02|27|10 Median: 02|24|57")
