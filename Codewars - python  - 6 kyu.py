@@ -2299,3 +2299,77 @@ import codewars_test as test
 #
 # test.assert_equals(stat("02|15|59, 2|47|16, 02|17|20, 2|32|34, 2|32|34, 2|17|17"),
 #     "Range: 00|31|17 Average: 02|27|10 Median: 02|24|57")
+
+
+# def grabscrab(said, possible_words):
+#     res = []
+#     said_d = word_to_dict(said)
+#     for i in possible_words:
+#         if said_d == word_to_dict(i):
+#             res.append(i)
+#     return res
+#
+#
+# def word_to_dict(word):
+#     d = {}
+#     for i in word:
+#         if i not in d:
+#             d[i] = 0
+#         d[i] += 1
+#     return d
+
+# def grabscrab(said, possible_words):
+#     return [ word for word in possible_words if sorted(word) == sorted(said) ]
+
+
+# def format_words(words):
+#     if not words:
+#         return ''
+#     words = [w for w in words if w]
+#     if len(words) > 2:
+#         return ', '.join(words[:-1]) + ' and ' + words[-1]
+#     elif len(words) == 2:
+#         return words[0] + ' and ' + words[-1]
+#     elif len(words) == 1:
+#         return words[0]
+#     else:
+#         return ''
+#
+#
+# test.assert_equals(format_words(['one', 'two', 'three', 'four']), 'one, two, three and four',
+#                    "formatWords(['one', 'two', 'three', 'four'] should return 'one, two, three and four'")
+# test.assert_equals(format_words(['one']), 'one', "formatWords(['one']) should return 'one'")
+# test.assert_equals(format_words(['one', '', 'three']), 'one and three',
+#                    "formatWords(['one', '', 'three']) should return 'one and three'")
+# test.assert_equals(format_words(['', '', 'three']), 'three', "formatWords(['', '', 'three']) should return 'three'")
+# test.assert_equals(format_words(['one', 'two', '']), 'one and two',
+#                    "formatWords(['one', 'two', '']) should return 'one and two'")
+# test.assert_equals(format_words([]), '', 'formatWords([]) should return ""')
+# test.assert_equals(format_words(None), '', 'formatWords(null) should return ""')
+# test.assert_equals(format_words(['']), '', 'formatWords([""]) should return ""')
+
+
+def rank(st, we, n):
+    if not st:
+        return 'No participants'
+    st = st.split(',')
+    if n > len(st):
+        return 'Not enough participants'
+    wns = []
+    for name in st:
+        wn = 0
+        for char in name.lower():
+            wn += ord(char) - 96
+        wns.append((name, (len(name) + wn) * we[st.index(name)]))
+    ons = sorted(sorted(wns, key=lambda x:x[0]),
+                 key=lambda x:x[1], reverse=True)
+    return ons[n-1][0]
+
+
+test.assert_equals(rank("Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin", [4, 2, 1, 4, 3, 1, 2], 4), "Benjamin")
+test.assert_equals(rank("Elijah,Chloe,Elizabeth,Matthew,Natalie,Jayden", [1, 3, 5, 5, 3, 6], 2), "Matthew")
+test.assert_equals(rank("Aubrey,Olivai,Abigail,Chloe,Andrew,Elizabeth", [3, 1, 4, 4, 3, 2], 4), "Abigail")
+test.assert_equals(rank("Lagon,Lily", [1, 5], 2), "Lagon")
+
+
+
